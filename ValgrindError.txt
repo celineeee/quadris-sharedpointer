@@ -1,0 +1,29 @@
+==56459== 
+==56459== HEAP SUMMARY:
+==56459==     in use at exit: 75,192 bytes in 73 blocks
+==56459==   total heap usage: 36,283 allocs, 36,210 frees, 1,586,031 bytes allocated
+==56459== 
+==56459== 304 bytes in 38 blocks are definitely lost in loss record 5 of 9
+==56459==    at 0x4C2E0EF: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==56459==    by 0x41211B: Board::heavy() (board.cc:316)
+==56459==    by 0x4054A2: main (main.cc:370)
+==56459== 
+==56459== 2,184 (264 direct, 1,920 indirect) bytes in 3 blocks are definitely lost in loss record 8 of 9
+==56459==    at 0x4C2E0EF: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==56459==    by 0x40840C: Block::right() (block.cc:266)
+==56459==    by 0x411461: Board::right() (board.cc:159)
+==56459==    by 0x402FA8: read_cmd(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, Board*, Level**, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, bool&) (main.cc:28)
+==56459==    by 0x40530E: main (main.cc:349)
+==56459== 
+==56459== LEAK SUMMARY:
+==56459==    definitely lost: 568 bytes in 41 blocks
+==56459==    indirectly lost: 1,920 bytes in 31 blocks
+==56459==      possibly lost: 0 bytes in 0 blocks
+==56459==    still reachable: 72,704 bytes in 1 blocks
+==56459==         suppressed: 0 bytes in 0 blocks
+==56459== Reachable blocks (those to which a pointer was found) are not shown.
+==56459== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==56459== 
+==56459== For counts of detected and suppressed errors, rerun with: -v
+==56459== Use --track-origins=yes to see where uninitialised values come from
+==56459== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)

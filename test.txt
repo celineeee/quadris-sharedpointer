@@ -1,0 +1,8 @@
+drop
+4right
+left
+drop
+left
+drop
+left
+drop
