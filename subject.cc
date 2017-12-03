@@ -4,11 +4,9 @@
 #include <iostream>
 
 Subject::~Subject() {
-    delete state;
 }
 
 Subject &Subject::operator=(const Subject &other){
-    delete state;
     observers.clear();
     for (int i = 0; i < other.observers.size(); i++) {
         observers.emplace_back(other.getObservers()[i]);
@@ -17,7 +15,7 @@ Subject &Subject::operator=(const Subject &other){
     return *this;
 }
 
-void Subject::attach(Observer *o) {
+void Subject::attach(shared_ptr<Observer> o) {
     observers.emplace_back(o);
 }
 
@@ -25,7 +23,7 @@ void Subject::notifyObservers() {
     for (auto &ob: this->observers) ob->notify(*this);
 }
 
-void Subject::detach(Observer *o) {
+void Subject::detach(shared_ptr<Observer> o) {
     for (auto it=observers.begin(); it !=observers.end(); ++it) {
         if (*it==o) {
             observers.erase(it);
@@ -34,19 +32,18 @@ void Subject::detach(Observer *o) {
     }
 }
 
-void Subject::setState(State *s) {
-    delete state;
+void Subject::setState(shared_ptr<State> s) {
     this->state = s;
 }
 
-State *Subject::getState() {
+shared_ptr<State> Subject::getState() {
     return this->state;
 }
 
-std::vector<Observer *> Subject::getObservers() const {
+std::vector<shared_ptr<Observer>> Subject::getObservers() const {
     return observers;
 }
 
-void Subject::setObservers(std::vector<Observer *> given) {
+void Subject::setObservers(std::vector<shared_ptr<Observer>> given) {
     observers = given;
 }

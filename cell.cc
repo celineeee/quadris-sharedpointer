@@ -29,12 +29,12 @@ Cell &Cell::operator=(const Cell &other) {
 }
 
 void Cell::updateState() {
-    State *cell_state = new CellState{r, c, blockt};
+    shared_ptr<State> cell_state = make_share<CellState> {r, c, blockt};
     setState(cell_state);
 }
 
 void Cell::notify(Subject &whoFrom) {
-    State *state = whoFrom.getState();
+    shared_ptr<State> state = whoFrom.getState();
     CellState *cstate = dynamic_cast<CellState *>(state);
     remained--;
     int whof_r = cstate->r;
