@@ -3,8 +3,6 @@
 #include "blocktype.h"
 #include "state.h"
 
-enum class ReasonType {Clearline, None};
-
 struct CellState: public State {
 	int r;
 	int c;
