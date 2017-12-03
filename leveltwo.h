@@ -8,8 +8,9 @@ class LevelTwo: public Level{
 public:
 	int getLevelNum() const override;
 	LevelTwo(int seed, bool useSeed);
-	void accept(LevelVisitor *lv, Block **preturn) override;
-	void accept(LevelVisitor *lv, Block *block, Block **preturn) override;
+	void accept(shared_ptr<LevelVisitor> lv, shared_ptr<shared_ptr<Block>> preturn) override;
+	void accept(shared_ptr<LevelVisitor> lv, 
+		shared_ptr<Block> block, shared_ptr<shared_ptr<Block>> preturn) override;
 };
 
 

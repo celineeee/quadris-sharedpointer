@@ -1,44 +1,44 @@
 #include "heavy.h"
 
-Block *Heavy::visit(LevelZero &lzero){
+shared_ptr<Block> Heavy::visit(LevelZero &lzero){
 	return nullptr;
 }
 
-Block * Heavy::visit(LevelZero &lzero, Block *block){
+shared_ptr<Block> Heavy::visit(LevelZero &lzero, shared_ptr<Block> block){
 	return nullptr;
 }
 
-Block *Heavy::visit(LevelOne &lone){
+shared_ptr<Block> Heavy::visit(LevelOne &lone){
 	return nullptr;
 }
 
-Block *Heavy::visit(LevelOne &lone, Block *block){
+shared_ptr<Block> Heavy::visit(LevelOne &lone, shared_ptr<Block> block){
 	return nullptr;
 }
 
-Block *Heavy::visit(LevelTwo &ltwo){
+shared_ptr<Block> Heavy::visit(LevelTwo &ltwo){
 	return nullptr;
 }
 
-Block *Heavy::visit(LevelTwo &ltwo, Block *block){
+shared_ptr<Block> Heavy::visit(LevelTwo &ltwo, shared_ptr<Block> block){
 	return nullptr;
 }
 
-Block *Heavy::visit(LevelThree &lthree){
+shared_ptr<Block> Heavy::visit(LevelThree &lthree){
 	return nullptr;
 }
 
-Block *Heavy::visit(LevelThree &lthree, Block *block){
-	Block *copy = block->down();
+shared_ptr<Block> Heavy::visit(LevelThree &lthree, shared_ptr<Block> block){
+	shared_ptr<Block> copy = block->down();
 	return copy;
 }
 
-Block *Heavy::visit(LevelFour &lfour){
+shared_ptr<Block> Heavy::visit(LevelFour &lfour){
 	return nullptr;
 }
 
-Block *Heavy::visit(LevelFour &lfour, Block *block){
-	Block *copy = block->down();
+shared_ptr<Block> Heavy::visit(LevelFour &lfour, shared_ptr<Block> block){
+	shared_ptr<Block> copy = block->down();
 	return copy;
 }
 

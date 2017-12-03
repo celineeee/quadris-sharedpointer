@@ -8,11 +8,12 @@ int LevelFour::getLevelNum() const{
 	return levelNum;
 }
 
-void LevelFour::accept(LevelVisitor *lv, Block **preturn){
+void LevelFour::accept(shared_ptr<LevelVisitor> lv, shared_ptr<shared_ptr<Block>> preturn){
 	*preturn = lv->visit(*this);
 }
 
-void LevelFour::accept(LevelVisitor *lv, Block *block, Block **preturn){
+void LevelFour::accept(shared_ptr<LevelVisitor> lv, 
+		shared_ptr<Block> block, shared_ptr<shared_ptr<Block>> preturn){
 	*preturn = lv->visit(*this, block);
 }
 

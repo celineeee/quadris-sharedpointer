@@ -7,17 +7,17 @@
 #include "levelfour.h"
 bool Generator::takenSeed = false;
 
-Block *Generator::visit(LevelZero &lzero){
+shared_ptr<Block> Generator::visit(LevelZero &lzero){
 	return nullptr;
 }
 
 
-Block *Generator::visit(LevelZero &lzero, Block *block){
+shared_ptr<Block> Generator::visit(LevelZero &lzero, shared_ptr<Block> block){
 	return nullptr;
 }
 
-Block *Generator::visit(LevelOne &lone){
-	Block *block;
+shared_ptr<Block> Generator::visit(LevelOne &lone){
+	shared_ptr<Block> block;
 	int curr;
 	if(lone.hasSeed() && !Generator::takenSeed){
         srand(lone.getSeed());
@@ -28,41 +28,41 @@ Block *Generator::visit(LevelOne &lone){
 		curr = rand() % 12;
 	}
 	switch(curr){
-		case 0: block = new Block(BlockType::I, lone.getLevelNum());
+		case 0: block = make_shared<Block>(BlockType::I, lone.getLevelNum());
 				break;
-		case 1: block = new Block(BlockType::I, lone.getLevelNum());
+		case 1: block = make_shared<Block>(BlockType::I, lone.getLevelNum());
 				break;
-		case 2: block = new Block(BlockType::J, lone.getLevelNum());
+		case 2: block = make_shared<Block>(BlockType::J, lone.getLevelNum());
 				break;
-		case 3: block = new Block(BlockType::J, lone.getLevelNum());
+		case 3: block = make_shared<Block>(BlockType::J, lone.getLevelNum());
 				break;
-		case 4: block = new Block(BlockType::L, lone.getLevelNum());
+		case 4: block = make_shared<Block>(BlockType::L, lone.getLevelNum());
 				break;
-		case 5: block = new Block(BlockType::L, lone.getLevelNum());
+		case 5: block = make_shared<Block>(BlockType::L, lone.getLevelNum());
 				break;
-		case 6: block = new Block(BlockType::O, lone.getLevelNum());
+		case 6: block = make_shared<Block>(BlockType::O, lone.getLevelNum());
 				break;
-		case 7: block = new Block(BlockType::O, lone.getLevelNum());
+		case 7: block = make_shared<Block>(BlockType::O, lone.getLevelNum());
 				break;
-		case 8: block = new Block(BlockType::T, lone.getLevelNum());
+		case 8: block = make_shared<Block>(BlockType::T, lone.getLevelNum());
 				break;
-		case 9: block = new Block(BlockType::T, lone.getLevelNum());
+		case 9: block = make_shared<Block>(BlockType::T, lone.getLevelNum());
 				break;
-		case 10: block = new Block(BlockType::S, lone.getLevelNum());
+		case 10: block = make_shared<Block>(BlockType::S, lone.getLevelNum());
 				break;
-		case 11: block = new Block(BlockType::Z, lone.getLevelNum());
+		case 11: block = make_shared<Block>(BlockType::Z, lone.getLevelNum());
 				break;
 
 	}
 	return block;
 }
 
-Block *Generator::visit(LevelOne &lone, Block *block){
+shared_ptr<Block> Generator::visit(LevelOne &lone, shared_ptr<Block> block{
 	return nullptr;
 }
 
-Block *Generator::visit(LevelTwo &ltwo){
-	Block *block;
+shared_ptr<Block> Generator::visit(LevelTwo &ltwo){
+	shared_ptr<Block> block;
 	int curr;
 	if(ltwo.hasSeed() && !Generator::takenSeed){
         srand(ltwo.getSeed());
@@ -73,31 +73,31 @@ Block *Generator::visit(LevelTwo &ltwo){
 		curr = rand() % 7;
 	}
 	switch(curr){
-		case 0: block = new Block(BlockType::I, ltwo.getLevelNum());
+		case 0: block = make_shared<Block>(BlockType::I, ltwo.getLevelNum());
 				break;
-		case 1: block = new Block(BlockType::J, ltwo.getLevelNum());
+		case 1: block = make_shared<Block>(BlockType::J, ltwo.getLevelNum());
 				break;
-		case 2: block = new Block(BlockType::L, ltwo.getLevelNum());
+		case 2: block = make_shared<Block>(BlockType::L, ltwo.getLevelNum());
 				break;
-		case 3: block = new Block(BlockType::O, ltwo.getLevelNum());
+		case 3: block = make_shared<Block>(BlockType::O, ltwo.getLevelNum());
 				break;
-		case 4: block = new Block(BlockType::S, ltwo.getLevelNum());
+		case 4: block = make_shared<Block>(BlockType::S, ltwo.getLevelNum());
 				break;
-		case 5: block = new Block(BlockType::Z, ltwo.getLevelNum());
+		case 5: block = make_shared<Block>(BlockType::Z, ltwo.getLevelNum());
 				break;
-		case 6: block = new Block(BlockType::T, ltwo.getLevelNum());
+		case 6: block = make_shared<Block>(BlockType::T, ltwo.getLevelNum());
 				break;
 		
 	}
 	return block;
 }
 
-Block *Generator::visit(LevelTwo &ltwo, Block *block){
+shared_ptr<Block> Generator::visit(LevelTwo &ltwo, shared_ptr<Block> block){
 	return nullptr;
 }
 
-Block *Generator::visit(LevelThree &lthree){
-    Block *block;
+shared_ptr<Block> Generator::visit(LevelThree &lthree){
+    shared_ptr<Block> block;
 	int curr;
 	if(lthree.hasSeed() && !Generator::takenSeed){
         srand(lthree.getSeed());
@@ -108,35 +108,35 @@ Block *Generator::visit(LevelThree &lthree){
 		curr = rand() % 9;
 	}
 	switch(curr){
-		case 0: block = new Block(BlockType::I, lthree.getLevelNum());
+		case 0: block = make_shared<Block>(BlockType::I, lthree.getLevelNum());
 				break;
-		case 1: block = new Block(BlockType::J, lthree.getLevelNum());
+		case 1: block = make_shared<Block>(BlockType::J, lthree.getLevelNum());
 				break;
-		case 2: block = new Block(BlockType::L, lthree.getLevelNum());
+		case 2: block = make_shared<Block>(BlockType::L, lthree.getLevelNum());
 				break;
-		case 3: block = new Block(BlockType::O, lthree.getLevelNum());
+		case 3: block = make_shared<Block>(BlockType::O, lthree.getLevelNum());
 				break;
-		case 4: block = new Block(BlockType::S, lthree.getLevelNum());
+		case 4: block = make_shared<Block>(BlockType::S, lthree.getLevelNum());
 				break;
-		case 5: block = new Block(BlockType::Z, lthree.getLevelNum());
+		case 5: block = make_shared<Block>(BlockType::Z, lthree.getLevelNum());
 				break;
-		case 6: block = new Block(BlockType::T, lthree.getLevelNum());
+		case 6: block = make_shared<Block>(BlockType::T, lthree.getLevelNum());
 				break;
-		case 7: block = new Block(BlockType::S, lthree.getLevelNum());
+		case 7: block = make_shared<Block>(BlockType::S, lthree.getLevelNum());
 				break;
-		case 8: block = new Block(BlockType::Z, lthree.getLevelNum());
+		case 8: block = make_shared<Block>(BlockType::Z, lthree.getLevelNum());
 				break;
 		
 	}
 	return block;
 }
 
-Block *Generator::visit(LevelThree &lthree, Block *block){
+shared_ptr<Block> Generator::visit(LevelThree &lthree, shared_ptr<Block> block){
 	return nullptr;
 }
 
-Block *Generator::visit(LevelFour &lfour){
-	Block *block;
+shared_ptr<Block> Generator::visit(LevelFour &lfour){
+	shared_ptr<Block> block;
 	int curr;
 	if(lfour.hasSeed() && !Generator::takenSeed){
         srand(lfour.getSeed());
@@ -147,30 +147,30 @@ Block *Generator::visit(LevelFour &lfour){
 		curr = rand() % 9;
 	}
 	switch(curr){
-		case 0: block = new Block(BlockType::I, lfour.getLevelNum());
+		case 0: block = make_shared<Block>(BlockType::I, lfour.getLevelNum());
 				break;
-		case 1: block = new Block(BlockType::J, lfour.getLevelNum());
+		case 1: block = make_shared<Block>(BlockType::J, lfour.getLevelNum());
 				break;
-		case 2: block = new Block(BlockType::L, lfour.getLevelNum());
+		case 2: block = make_shared<Block>(BlockType::L, lfour.getLevelNum());
 				break;
-		case 3: block = new Block(BlockType::O, lfour.getLevelNum());
+		case 3: block = make_shared<Block>(BlockType::O, lfour.getLevelNum());
 				break;
-		case 4: block = new Block(BlockType::S, lfour.getLevelNum());
+		case 4: block = make_shared<Block>(BlockType::S, lfour.getLevelNum());
 				break;
-		case 5: block = new Block(BlockType::Z, lfour.getLevelNum());
+		case 5: block = make_shared<Block>(BlockType::Z, lfour.getLevelNum());
 				break;
-		case 6: block = new Block(BlockType::T, lfour.getLevelNum());
+		case 6: block = make_shared<Block>(BlockType::T, lfour.getLevelNum());
 				break;
-		case 7: block = new Block(BlockType::S, lfour.getLevelNum());
+		case 7: block = make_shared<Block>(BlockType::S, lfour.getLevelNum());
 				break;
-		case 8: block = new Block(BlockType::Z, lfour.getLevelNum());
+		case 8: block = make_shared<Block>(BlockType::Z, lfour.getLevelNum());
 				break;
 		
 	}
 	return block;
 }
 
-Block *Generator::visit(LevelFour &lfour, Block *block){
+shared_ptr<Block> Generator::visit(LevelFour &lfour, shared_ptr<Block> block){
 	return nullptr;
 }
 

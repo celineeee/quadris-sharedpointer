@@ -7,11 +7,12 @@ int LevelZero::getLevelNum() const{
 	return levelNum;
 }
 
-void LevelZero::accept(LevelVisitor *lv, Block **preturn) {
+void LevelZero::accept(shared_ptr<LevelVisitor> lv, shared_ptr<shared_ptr<Block>> preturn) {
 	return;
 }
 
-void LevelZero::accept(LevelVisitor *lv, Block *block, Block **preturn){
+void LevelZero::accept(shared_ptr<LevelVisitor> lv, 
+		shared_ptr<Block> block, shared_ptr<shared_ptr<Block>> preturn){
 	return;
 }
 

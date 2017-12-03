@@ -16,9 +16,9 @@ public:
 	int getSeed() const;
 	bool hasSeed() const;
 	virtual int getLevelNum() const = 0;
-	virtual void accept(LevelVisitor *lv, Block **preturn) = 0;
-	virtual void accept(LevelVisitor *lv, 
-		Block *block, Block **preturn) = 0;
+	virtual void accept(shared_ptr<LevelVisitor> lv, shared_ptr<shared_ptr<Block>> preturn) = 0;
+	virtual void accept(shared_ptr<LevelVisitor> lv, 
+		shared_ptr<Block> block, shared_ptr<shared_ptr<Block>> preturn) = 0;
 	virtual ~Level() = default;
 };
 
