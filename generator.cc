@@ -5,6 +5,7 @@
 #include "leveltwo.h"
 #include "levelthree.h"
 #include "levelfour.h"
+using namespace std;
 bool Generator::takenSeed = false;
 
 shared_ptr<Block> Generator::visit(LevelZero &lzero){

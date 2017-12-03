@@ -1,4 +1,5 @@
 #include "heavy.h"
+using namespace std;
 
 shared_ptr<Block> Heavy::visit(LevelZero &lzero){
 	return nullptr;

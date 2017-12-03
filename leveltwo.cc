@@ -1,7 +1,7 @@
 #include "levelvisitor.h"
 #include "leveltwo.h"
 
-
+using namespace std;
 LevelTwo::LevelTwo(int seed, bool useSeed):Level{seed, useSeed}{}
 int LevelTwo::getLevelNum() const{
 	return levelNum;

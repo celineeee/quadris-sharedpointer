@@ -1,5 +1,6 @@
 #include "levelzero.h"
 #include "levelvisitor.h"
+using namespace std;
 
 LevelZero::LevelZero(int seed, bool useSeed): Level{seed, useSeed}{}
 

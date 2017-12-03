@@ -1,7 +1,7 @@
 #include "levelvisitor.h"
 #include "levelfour.h"
 
-
+using namespace std;
 LevelFour::LevelFour(int seed, bool useSeed):Level{seed, useSeed}{}
 
 int LevelFour::getLevelNum() const{

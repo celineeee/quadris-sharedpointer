@@ -1,7 +1,7 @@
 #include "levelvisitor.h"
 #include "levelone.h"
 #include <iostream>
-
+using namespace std;
 
 LevelOne::LevelOne(int seed, bool useSeed):Level{seed, useSeed}{}
 

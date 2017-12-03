@@ -11,9 +11,9 @@ class LevelZero : public Level{
 public:
 	int getLevelNum() const override;
 	LevelZero(int seed, bool useSeed);
-	void accept(Lshared_ptr<LevelVisitor> lv, shared_ptr<shared_ptr<Block>> preturn) override;
-	void accept(shared_ptr<LevelVisitor> lv, 
-		shared_ptr<Block> block, shared_ptr<shared_ptr<Block>> preturn) override;
+	void accept(std::shared_ptr<LevelVisitor> lv, std::shared_ptr<std::shared_ptr<Block>> preturn) override;
+	void accept(std::shared_ptr<LevelVisitor> lv, 
+		std::shared_ptr<Block> block, std::shared_ptr<std::shared_ptr<Block>> preturn) override;
 
 };
 

@@ -6,16 +6,16 @@
 class Heavy : public LevelVisitor{
 public:
 
-	shared_ptr<Block> visit(LevelZero &lzero) override;
-	shared_ptr<Block> visit(LevelZero &lzero, shared_ptr<Block> block) override;
-	shared_ptr<Block> visit(LevelOne &lone) override;
-	shared_ptr<Block> visit(LevelOne &lone, shared_ptr<Block> block) override;
-	shared_ptr<Block> visit(LevelTwo &ltwo) override;
-	shared_ptr<Block> visit(LevelTwo &ltwo, shared_ptr<Block> block) override;
-	shared_ptr<Block> visit(LevelThree &lthree) override;
-	shared_ptr<Block> visit(LevelThree &lthree, shared_ptr<Block> block) override;
-	shared_ptr<Block> visit(LevelFour &lfour) override;
-	shared_ptr<Block> visit(LevelFour &lfour, shared_ptr<Block> block) override;
+	std::shared_ptr<Block> visit(LevelZero &lzero) override;
+	std::shared_ptr<Block> visit(LevelZero &lzero, std::shared_ptr<Block> block) override;
+	std::shared_ptr<Block> visit(LevelOne &lone) override;
+	std::shared_ptr<Block> visit(LevelOne &lone, std::shared_ptr<Block> block) override;
+	std::shared_ptr<Block> visit(LevelTwo &ltwo) override;
+	std::shared_ptr<Block> visit(LevelTwo &ltwo, std::shared_ptr<Block> block) override;
+	std::shared_ptr<Block> visit(LevelThree &lthree) override;
+	std::shared_ptr<Block> visit(LevelThree &lthree, std::shared_ptr<Block> block) override;
+	std::shared_ptr<Block> visit(LevelFour &lfour) override;
+	std::shared_ptr<Block> visit(LevelFour &lfour, std::shared_ptr<Block> block) override;
 
 };
 
